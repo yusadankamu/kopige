@@ -1,6 +1,6 @@
-# 🚀 Kopige
+# 🚀 Kopige Republik Coffeeshop
 
-A modern, efficient file copying utility built for the web.
+A modern landing page for the imaginary coffeeshop in Bali
 
 ## 🌟 Features
 
