@@ -1,50 +1,77 @@
-# React + TypeScript + Vite
+# 🚀 Kopige
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, efficient file copying utility built for the web.
 
-Currently, two official plugins are available:
+## 🌟 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Fast Copying**: Lightning-fast file copying with optimized performance
+- **Progress Tracking**: Real-time progress monitoring
+- **Error Handling**: Robust error handling and recovery
+- **Cross-Platform**: Works seamlessly across different operating systems
 
-## Expanding the ESLint configuration
+## 🛠️ Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+npm install kopige
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## 📖 Usage
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+```javascript
+import { kopige } from 'kopige';
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+// Simple file copy
+await kopige.copy('source.txt', 'destination.txt');
+
+// Copy with progress tracking
+await kopige.copy('source.txt', 'destination.txt', {
+  onProgress: (progress) => {
+    console.log(`Progress: ${progress}%`);
+  }
+});
 ```
+
+## ⚙️ API Reference
+
+### `copy(source, destination, options?)`
+
+Copies a file from source to destination.
+
+#### Parameters
+
+- `source` (string): Path to the source file
+- `destination` (string): Path to the destination
+- `options` (object, optional):
+  - `onProgress`: Callback function for progress updates
+  - `overwrite`: Boolean to allow overwriting (default: false)
+
+#### Returns
+
+- Promise<void>: Resolves when copying is complete
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 👥 Authors
+
+- [@yusadankamu](https://github.com/yusadankamu)
+
+## 🙏 Acknowledgments
+
+- Thanks to all contributors who have helped make this project better
+- Special thanks to the Node.js community for inspiration
+
+---
+
+Made with ❤️ by [I Wayan Dirgayusa](https://github.com/yusadankamu)
